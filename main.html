@@ -8,24 +8,6 @@
 
 <!-- Script elements -->
 <script src = "exercise.js" type = "text/javascript" > </script>
-<script>
-    window.onload = function sadboy() {
-        for (i = 0; i < 10; i++) {
-            let element = document.createElement("button");
-            element.className="mdl-button mdl-js-button mdl-js-ripple-effect";
-            element.id = "exercise" + i;
-            let t = document.createTextNode("Exercise " + i);
-            element.appendChild(t);
-            //element.innerHTML = '<img src="images/hej.jpg" width="10%" height = "10%"/>';
-            element.onclick = function(){
-                console.log(this.id);
-                location.href="exercise_page.html"
-                return false
-            };
-            mainDiv.appendChild(element)
-        }
-    };
-</script>
 
 <!--Declare the document head -->
 <head>
@@ -40,11 +22,15 @@
     <header class ="mdl-layout__header">
         <div class ="mdl-layout__header-row">
             <!--Create breadcrumbs to show current path-->
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" style.color="white">
                 <i class="material-icons">home</i>
             </button>
             <!-- Title -->
-            <span class ="mdl-layout-title">Week one</span>
+            <span class ="mdl-layout-title">
+                <button class="mdl-button mdl-jas-button mdl-js-ripple-effect" onclick="goToWeekOne()">
+                    > Week One
+                </button>
+            </span>
             <!-- Add spacer, to align navigation to the right -->
             <div class ="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->

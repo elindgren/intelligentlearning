@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Material Design Light & Google Material Design icons imports -->
+<link rel = "stylesheet" href="mdl/material.min.css">
+<script src = "mdl/material.min.js"></script>
+<link rel ="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 <head>
     <meta charset="UTF-8">
     <title>Exercise page</title>
 </head>
-<body>
-    <button onclick=goBack()>
-        Escape!
-    </button>
-</body>
+<div class ="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class ="mdl-layout__header">
+        <div class ="mdl-layout__header-row">
+            <!--Create breadcrumbs to show current path-->
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                <i class="material-icons">home</i>
+            </button>
+            <!-- Title -->
+            <span class ="mdl-layout-title"> > Week one > Exercise </span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class ="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class ="mdl-navigation__link" href="">Link</a>
+                <a class ="mdl-navigation__link" href="">Link</a>
+                <a class ="mdl-navigation__link" href="">Link</a>
+                <a class ="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+    </header>
+    <div class ="mdl-layout__drawer">
+        <span class ="mdl-layout-title">Links</span>
+        <nav class = "mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+    </div>
+    <main class ="mdl-layout__content">
+        <div id = "mainDiv" class="page-content">
+            <!-- Content goes here -->
+            <button onclick="goBack()" >Escape!</button>
+        </div>
+    </main>
+</div>
 </html>
 
 <script>
