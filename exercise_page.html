@@ -44,11 +44,14 @@
     function goBack(){
         location.href = "main.html"
     }
-    window.onload = function getExerciseName(){
+    window.onload = function setExerciseName(){
         //Parse the URL for the current exercise ID.
         let exerciseReference = location.search.substring(1).split("&");
         let temp = exerciseReference[0].split("=");
         let element = document.getElementById("breadcrumbExercise");
-        element.innerHTML = temp[1];
+        // Get exercise number
+        let num = temp[1].replace(/^\D+/g, '');
+
+        element.innerText = "Exercise " + num;
     }
 </script>
