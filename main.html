@@ -5,6 +5,8 @@
 <script src = "mdl/material.min.js"></script>
 <link rel ="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+<!--Our css-->
+<link rel = "stylesheet" href="breadcrumb.css">
 
 <!-- Script elements -->
 <script src = "exercise.js" type = "text/javascript" > </script>
@@ -22,15 +24,10 @@
     <header class ="mdl-layout__header">
         <div class ="mdl-layout__header-row">
             <!--Create breadcrumbs to show current path-->
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" style.color="white">
-                <i class="material-icons">home</i>
-            </button>
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="material-icons">home</i></a></li>
+            </ul>
             <!-- Title -->
-            <span class ="mdl-layout-title">
-                <button class="mdl-button mdl-jas-button mdl-js-ripple-effect" onclick="goToWeekOne()">
-                    > Week One
-                </button>
-            </span>
             <!-- Add spacer, to align navigation to the right -->
             <div class ="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
