@@ -17,7 +17,8 @@
                 <i class="material-icons">home</i>
             </button>
             <!-- Title -->
-            <span class ="mdl-layout-title"> > Week one > Exercise </span>
+            <span class ="mdl-layout-title"> > Week one ></span>
+            <span id = pageName></span>
             <!-- Add spacer, to align navigation to the right -->
             <div class ="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -50,5 +51,11 @@
 <script>
     function goBack(){
         location.href = "main.html"
+    }
+    window.onload = function setPageName(){
+        //Parse the URL for the current exercise ID.
+        var exerciseReference = location.search.substring(1).split("&");
+        var temp = exerciseReference[0].split("=");
+        pageName.innerHTML = temp[1];
     }
 </script>
