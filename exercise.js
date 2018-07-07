@@ -33,8 +33,24 @@ class Exercise {
     }
 
 }
-function toggleSize(id) {
-    for(i = 0; i < 100; i++){
-        document.getElementById(id).innerText = i
+window.onload = function sadboi() {
+    for (i = 0; i < 10; i++) {
+        let element = document.createElement("button");
+        element.className="mdl-button mdl-js-button mdl-js-ripple-effect";
+        element.id = "exercise" + i;
+        let t = document.createTextNode("Exercise " + i);
+        element.appendChild(t);
+        //element.innerHTML = '<img src="images/hej.jpg" width="10%" height = "10%"/>';
+        element.onclick = function(){
+            console.log(this.id);
+            //Pass the current exercise as a parameter
+            location.href="exercise_page.html" + "?exercise=" + this.id;
+            return false
+        };
+        mainDiv.appendChild(element)
     }
+};
+//This function returns to WeekOne. For breadcrumbs.
+function goToWeekOne(){
+    location.href="main.html"
 }
