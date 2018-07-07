@@ -1,0 +1,32 @@
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+    padding: 4px;
+    content: ">";
+}
+
+ul.breadcrumb li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #00dabb;
+    text-decoration: underline;
+}
+
+.material-icons.md-house {
+    font-size: 24px;
+}
+
+.icon-align {
+    vertical-align: text-bottom;
+}
