@@ -33,3 +33,8 @@ class Exercise {
     }
 
 }
+function toggleSize(id) {
+    for(i = 0; i < 100; i++){
+        document.getElementById(id).innerText = i
+    }
+}
