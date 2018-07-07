@@ -9,7 +9,7 @@ ul.breadcrumb li {
 }
 
 ul.breadcrumb li + li:before {
-    padding: 2px;
+    padding: 4px;
     content: ">";
 }
 
@@ -21,4 +21,12 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
     color: #00dabb;
     text-decoration: underline;
+}
+
+.material-icons.md-house {
+    font-size: 24px;
+}
+
+.icon-align {
+    vertical-align: text-bottom;
 }

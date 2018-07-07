@@ -5,6 +5,9 @@
 <script src = "mdl/material.min.js"></script>
 <link rel ="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+<!--Our css-->
+<link rel = "stylesheet" href="breadcrumb.css">
+
 <head>
     <meta charset="UTF-8">
     <title>Exercise page</title>
@@ -13,21 +16,10 @@
     <header class ="mdl-layout__header">
         <div class ="mdl-layout__header-row">
             <!--Create breadcrumbs to show current path-->
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-                <i class="material-icons">home</i>
-            </button>
-            <!-- Title -->
-            <span class ="mdl-layout-title"> > Week one ></span>
-            <span id = pageName></span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class ="mdl-layout-spacer"></div>
-            <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class ="mdl-navigation__link" href="">Link</a>
-                <a class ="mdl-navigation__link" href="">Link</a>
-                <a class ="mdl-navigation__link" href="">Link</a>
-                <a class ="mdl-navigation__link" href="">Link</a>
-            </nav>
+            <ul class="breadcrumb">
+                <li><a href="main.html"><i class="material-icons md-house icon-align">home</i></a></li>
+                <li id="breadcrumbExercise"></li>
+            </ul>
         </div>
     </header>
     <div class ="mdl-layout__drawer">
@@ -52,10 +44,11 @@
     function goBack(){
         location.href = "main.html"
     }
-    window.onload = function setPageName(){
+    window.onload = function getExerciseName(){
         //Parse the URL for the current exercise ID.
-        var exerciseReference = location.search.substring(1).split("&");
-        var temp = exerciseReference[0].split("=");
-        pageName.innerHTML = temp[1];
+        let exerciseReference = location.search.substring(1).split("&");
+        let temp = exerciseReference[0].split("=");
+        let element = document.getElementById("breadcrumbExercise");
+        element.innerHTML = temp[1];
     }
 </script>
