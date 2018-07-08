@@ -8,6 +8,8 @@
 <!--Our css-->
 <link rel = "stylesheet" href="breadcrumb.css">
 
+
+
 <head>
     <meta charset="UTF-8">
     <title>Exercise page</title>
@@ -34,17 +36,92 @@
     <main class ="mdl-layout__content">
         <div id = "mainDiv" class="page-content">
             <!-- Content goes here -->
-            <div class="exercise-container">
-                Här skall komma mera.
+            <div class="question-container">
+                <div class="title-container" id="questionTitle">
+                </div>
+                <div class="text-container">
+                    Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.
+                </div>
+                <img src="images/ex_uppgift.png" class="image-container">
+            </div>
+            <div class="answer-container">
+                <div class="text-container">
+                    Enter your answer
+                </div>
+                <!--Create an answer form using a numeric textfield -->
+                <form action="#" class="answer-form-container">
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id ="exerciseAnswer">
+                        <label class="mdl-textfield__label" for="exerciseAnswer">Answer</label>
+                        <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
 </div>
 </html>
 
+<style>
+
+    .question-container{
+        /*Increase the margin a bit to make it look more */
+        padding: 60px;
+        margin:auto;
+        width: 75%;
+        /*Add a shadow to the card*/
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+    }
+    .text-container{
+        /*This container just contains the text to be displayed and applies the desired formating.*/
+        margin: auto; /* Center the text container */
+        width: 80%;
+        /*Set the text color to black*/
+        color: black;
+        font-size: 20px;
+        /*Center the text*/
+        text-align: left;
+        padding: 20px;
+    }
+    .title-container{
+        /*This container just contains the title text to be displayed and applies the desired formating.*/
+        margin: auto; /* Center the text container */
+        width: 80%;
+        /*Set the text color to black*/
+        color: black;
+        font-size: 35px;
+        /*Center the text*/
+        text-align: left;
+        padding: 20px;
+    }
+    .image-container{
+        display: block; /* Make the image into a block element */
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        padding: 20px;
+    }
+    .answer-container{
+        /*Increase the margin a bit to make it look more */
+        padding: 60px;
+        margin:auto;
+        width: 75%;
+        /*Add a shadow to the card*/
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+    }
+    .answer-form-container{
+        margin: auto; /* Center the text container */
+        width: 80%;
+        padding: 20px;
+    }
+</style>
+<!--Remove this from here and put in a CSS file-->
+
 <script>
-    function goBack(){
-        location.href = "main.html"
+    function solveExercise(){
+
     }
     window.onload = function setExerciseName(){
         //Parse the URL for the current exercise ID.
@@ -55,5 +132,10 @@
         let num = temp[1].replace(/^\D+/g, '');
 
         element.innerText = "Exercise " + num;
+
+        questionTitle = document.getElementById("questionTitle");
+        questionTitle.innerText = "Exercise " + num;
     }
 </script>
+
+
