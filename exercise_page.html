@@ -51,7 +51,7 @@
                 <!--Create an answer form using a numeric textfield -->
                 <form action="#" class="answer-form-container">
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id ="exerciseAnswer">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id ="exerciseAnswer" oninput="checkResult">
                         <label class="mdl-textfield__label" for="exerciseAnswer">Answer</label>
                         <span class="mdl-textfield__error">Input is not a number!</span>
                     </div>
@@ -68,7 +68,7 @@
         /*Increase the margin a bit to make it look more */
         padding: 60px;
         margin:auto;
-        width: 75%;
+        width: 60%;
         /*Add a shadow to the card*/
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         box-sizing: border-box;
@@ -103,15 +103,17 @@
         padding: 20px;
     }
     .answer-container{
-        /*Increase the margin a bit to make it look more */
-        padding: 60px;
+
+        /* The container for the answer form card */
+        padding: 40px;
         margin:auto;
-        width: 75%;
+        width: 60%;
         /*Add a shadow to the card*/
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         box-sizing: border-box;
     }
     .answer-form-container{
+        /*The styling for the answer form */
         margin: auto; /* Center the text container */
         width: 80%;
         padding: 20px;
@@ -120,8 +122,9 @@
 <!--Remove this from here and put in a CSS file-->
 
 <script>
-    function solveExercise(){
-
+    function checkResult(){
+        result = exerciseAnswer.ParseForm();
+        console.log(result);
     }
     window.onload = function setExerciseName(){
         //Parse the URL for the current exercise ID.
