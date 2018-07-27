@@ -3,7 +3,7 @@ window.onload = function sadboi() {
         //Create a button element and style it accordingly
         let element = document.createElement("button");
         element.className="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise";
-        element.id = "exercise" + i;
+        element.id = "exercise_" + i;
         //Create a thumbnail and text element - place them inside the button.
         let exerciseThumbnail = document.createElement("img");
         exerciseThumbnail.src = "images/ex_uppgift.png";
@@ -22,9 +22,9 @@ window.onload = function sadboi() {
             console.log(this.id);
             //Pass the current exercise as a parameter
             location.href="exercise_page.html" + "?exercise=" + this.id;
-            return false
+            return false;
         };
-        exerciseContainer.appendChild(element)
+        exerciseContainer.appendChild(element);
     }
 };
 //This function returns to WeekOne. For breadcrumbs.

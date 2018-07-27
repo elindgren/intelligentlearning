@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Material Design Light & Google Material Design icons imports -->
-<link rel = "stylesheet" href="mdl/material.min.css">
-<script src = "mdl/material.min.js"></script>
-<link rel ="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="mdl/material.min.css">
+<script src="mdl/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <!--Our css-->
-<link rel = "stylesheet" href="intelligentlearning.css">
-
+<link rel="stylesheet" href="intelligentlearning.css">
 
 
 <head>
     <meta charset="UTF-8">
     <title>Exercise page</title>
 </head>
-<div class ="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class ="mdl-layout__header">
-        <div class ="mdl-layout__header-row">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
             <!--Create breadcrumbs to show current path-->
             <ul class="breadcrumb">
                 <li><a href="main.html"><i class="material-icons md-house icon-align">home</i></a></li>
@@ -24,22 +23,27 @@
             </ul>
         </div>
     </header>
-    <div class ="mdl-layout__drawer">
-        <span class ="mdl-layout-title">Links</span>
-        <nav class = "mdl-navigation">
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Links</span>
+        <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
         </nav>
     </div>
-    <main class ="mdl-layout__content">
-        <div id = "mainDiv" class="page-content">
+    <main class="mdl-layout__content">
+        <div id="mainDiv" class="page-content">
             <!-- Content goes here -->
             <div class="question-container">
                 <div class="text-container" id="questionTitle"></div>
                 <div class="text-container">
-                    Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.
+                    Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard
+                    ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra
+                    ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången
+                    till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband
+                    med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus
+                    PageMaker.
                 </div>
                 <img src="images/ex_uppgift.png" class="image-container">
             </div>
@@ -50,7 +54,8 @@
                 <!--Create an answer form using a numeric textfield -->
                 <form action="#" class="answer-form-container">
                     <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id ="exerciseAnswer" oninput="checkResult">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                               id="exerciseAnswer" oninput="checkResult">
                         <label class="mdl-textfield__label" for="exerciseAnswer">Answer</label>
                         <span class="mdl-textfield__error">Input is not a number!</span>
                     </div>
@@ -61,24 +66,44 @@
 </div>
 </html>
 
+
 <script>
-    function checkResult(){
-        result = exerciseAnswer.ParseForm();
+    function checkResult() {
+        let result = exerciseAnswer.ParseForm();
         console.log(result);
     }
-    window.onload = function setExerciseName(){
+
+    window.onload = function setExerciseName() {
         //Parse the URL for the current exercise ID.
         let exerciseReference = location.search.substring(1).split("&");
         let temp = exerciseReference[0].split("=");
         let element = document.getElementById("breadcrumbExercise");
-        // Get exercise number
-        let num = temp[1].replace(/^\D+/g, '');
 
-        element.innerText = "Exercise " + num;
+        // Get the parts of the name
+        let exerciseNameSegments = temp[1].split("_");
+        let exerciseName = "";
 
-        questionTitle = document.getElementById("questionTitle");
+        for (let i = 0; i < exerciseNameSegments.length; i++) {
+            if (i > 0) {
+                exerciseName += " ";
+            }
+            exerciseName += capitaliseFirst(exerciseNameSegments[i]);
+        }
+
+        element.innerText = exerciseName;
+
+        // Set question title
+        let questionTitle = document.getElementById("questionTitle");
+        questionTitle.innerText = exerciseName;
         questionTitle.style.fontSize = "35px"; //Set the title font size
-        questionTitle.innerText = "Exercise " + num;
+    };
+
+    function capitaliseFirst(inputString) {
+        let firstCharacter = inputString.charAt(0);
+        if (firstCharacter.match(/[a-z]/i)) {
+            firstCharacter = firstCharacter.toUpperCase();
+        }
+        return firstCharacter + inputString.slice(1);
     }
 </script>
 
