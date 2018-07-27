@@ -7,7 +7,8 @@
 
 <!--Our css-->
 <link rel="stylesheet" href="intelligentlearning.css">
-
+<!--Our scripts-->
+<script src = "exercise.js" type = "text/javascript" ></script>
 
 <head>
     <meta charset="UTF-8">
@@ -68,6 +69,8 @@
 
 
 <script>
+    let exerciseJSON = null; //Set availability of this JSON for answer checking etc.
+
     function checkResult() {
         let result = exerciseAnswer.ParseForm();
         console.log(result);
@@ -80,15 +83,8 @@
         let element = document.getElementById("breadcrumbExercise");
 
         // Get the parts of the name
-        let exerciseNameSegments = temp[1].split("_");
-        let exerciseName = "";
-
-        for (let i = 0; i < exerciseNameSegments.length; i++) {
-            if (i > 0) {
-                exerciseName += " ";
-            }
-            exerciseName += capitaliseFirst(exerciseNameSegments[i]);
-        }
+        exerciseJSON = fetchExerciseInformationByID(temp[1]);
+        let exerciseName = exerciseJSON.title;
 
         element.innerText = exerciseName;
 
@@ -105,7 +101,6 @@
         }
         return firstCharacter + inputString.slice(1);
     }
-
 
 </script>
 
