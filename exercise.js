@@ -31,3 +31,28 @@ window.onload = function sadboi() {
 function goToWeekOne(){
     location.href="main.html"
 }
+
+function fetchExerciseInformation() {
+    let path = "exercise_information.json";
+    let actualJSON = null;
+    loadJSON(function (response) {
+        actualJSON = JSON.parse(response);
+    }, path);
+    return actualJSON;
+}
+/**
+ * Loads JSON from path
+ * @param callback, function that parses JSON
+ * @param path, path to JSON
+ */
+function loadJSON(callback, path) {
+    let xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open("GET", path, true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState === 4 && xobj.status === 200) {
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
