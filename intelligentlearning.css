@@ -1,0 +1,76 @@
+/********************************************Breadcrumb CSS ********************************************/
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+    padding: 4px;
+    content: ">";
+}
+
+ul.breadcrumb li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #00dabb;
+    text-decoration: underline;
+}
+
+.material-icons.md-house {
+    font-size: 24px;
+}
+
+.icon-align {
+    vertical-align: text-bottom;
+}
+/******************************************** Exercise Page CSS ********************************************/
+.question-container {
+    /*Increase the margin a bit to make it look more */
+    padding: 60px;
+    margin: auto;
+    width: 60%;
+    /*Add a shadow to the card*/
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+.text-container{
+    /*This container just contains the text to be displayed and applies the desired formating.*/
+    margin: auto; /* Center the text container */
+    width: 80%;
+    /*Set the text color to black*/
+    color: black;
+    font-size: 20px;
+    /*Center the text*/
+    text-align: left;
+    padding: 20px;
+}
+.image-container{
+    display: block; /* Make the image into a block element */
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    padding: 20px;
+}
+.answer-container{
+    /* The container for the answer form card */
+    padding: 40px;
+    margin:auto;
+    width: 60%;
+    /*Add a shadow to the card*/
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+.answer-form-container{
+    /*The styling for the answer form */
+    margin: auto; /* Center the text container */
+    width: 80%;
+    padding: 20px;
+}
