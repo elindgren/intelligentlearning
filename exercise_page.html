@@ -38,22 +38,18 @@
             <!-- Content goes here -->
             <div class="question-container">
                 <div class="text-container" id="questionTitle"></div>
-                <div class="text-container">
-                    Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard
-                    ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra
-                    ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången
-                    till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband
-                    med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus
-                    PageMaker.
+                    Default title
+                <div class="text-container" id = "questionText">
+                    Default text
                 </div>
-                <img src="images/ex_uppgift.png" class="image-container">
+                <img src="images/default.png" class="image-container" id = "questionImage">
             </div>
             <div class="answer-container">
                 <div class="text-container">
                     Enter your answer
                 </div>
                 <!--Create an answer form using a numeric textfield -->
-                <form action="#" class="answer-form-container">
+                <form class="answer-form-container">
                     <div class="mdl-textfield mdl-js-textfield">
                         <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
                                id="exerciseAnswer" oninput="checkResult">
@@ -92,6 +88,12 @@
         let questionTitle = document.getElementById("questionTitle");
         questionTitle.innerText = exerciseName;
         questionTitle.style.fontSize = "35px"; //Set the title font size
+
+        // Set question image - Overrides the defualt image if an image can be found
+        document.getElementById("questionImage").src = exerciseJSON.image_path;
+
+        // Set question text
+        document.getElementById("questionText").innerText = exerciseJSON.exercise_text;
     };
 
     function capitaliseFirst(inputString) {
