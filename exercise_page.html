@@ -132,12 +132,27 @@
         let temp = exerciseReference[0].split("=");
         let element = document.getElementById("breadcrumbExercise");
         // Get exercise number
-        let num = temp[1].replace(/^\D+/g, '');
+        let exerciseNameSegments = temp[1].split("_");
+        let exerciseName = "";
 
-        element.innerText = "Exercise " + num;
+        for (i = 0; i < exerciseNameSegments.length; i++){
+            if (i > 0){
+                exerciseName += " ";
+            }
+            exerciseName += capitaliseFirst(exerciseNameSegments[i]);
+        }
+
+        element.innerText = exerciseName;
 
         questionTitle = document.getElementById("questionTitle");
-        questionTitle.innerText = "Exercise " + num;
+        questionTitle.innerText = exerciseName;
+    }
+    function capitaliseFirst(inputString) {
+        let firstCharacter = inputString.charAt(0);
+        if (firstCharacter.match(/[a-z]/i)) {
+            firstCharacter = firstCharacter.toUpperCase();
+        }
+        return firstCharacter + inputString.slice(1);
     }
 </script>
 
