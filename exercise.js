@@ -1,5 +1,10 @@
 window.onload = function sadboi() {
+    console.log("Fetching exercise information.");
     let exerciseJSON = fetchExerciseInformation();
+    console.log("Exercise information fetched.");
+    if(exerciseJSON == null){
+        console.log("Exercise JSON null in sadboi!");
+    }
     //Save the JSON locally for availability to other pages.
     strinigifiedExerciseJSON = JSON.stringify(exerciseJSON);
     localStorage.setItem("exerciseJSON", strinigifiedExerciseJSON);
@@ -39,12 +44,15 @@ function goToWeekOne() {
 
 function fetchExerciseInformation() {
     let path = "exercise_information.json";
+    console.log("Exercise path: " + path);
     let actualJSON = null;
     loadJSON(function (response) {
         actualJSON = JSON.parse(response);
     }, path);
     return actualJSON;
 }
+
+//Exercise statuses: started, not_started, finishedx
 
 function fetchExerciseInformationByID(id) {
     console.log("ID: " + id);
@@ -74,7 +82,7 @@ function fetchExerciseInformationByID(id) {
 function loadJSON(callback, path) {
     let xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open("GET", path, false);
+    xobj.open("GET", path, true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4 && xobj.status === 200) {
             callback(xobj.responseText);
