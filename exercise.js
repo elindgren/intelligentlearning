@@ -2,25 +2,31 @@ window.onload = function sadboi() {
     console.log("Fetching exercise information.");
     let exerciseJSON = fetchExerciseInformation();
     console.log("Exercise information fetched.");
-    if(exerciseJSON == null){
+    if (exerciseJSON == null) {
         console.log("Exercise JSON null in sadboi!");
     }
+
     //Save the JSON locally for availability to other pages.
-    strinigifiedExerciseJSON = JSON.stringify(exerciseJSON);
-    localStorage.setItem("exerciseJSON", strinigifiedExerciseJSON);
+    updateSessionStorage("exerciseJSON", exerciseJSON);
     console.log("JSON size:" + exerciseJSON.exercises.length);
+    let totalTries = 0;
+    for (let i = 0; i < exerciseJSON.exercises.length; i++) {
+        totalTries += exerciseJSON.exercises[i].tries;
+    }
+    console.log("Total tries: " + totalTries);
+
     for (i = 0; i < exerciseJSON.exercises.length; i++) {
         //Create a button element and style it accordingly
         let element = document.createElement("button");
 
         //Set the status of the button
-        if(exerciseJSON.exercises[i].status == "not_started") {
+        if (exerciseJSON.exercises[i].status == "not_started") {
             element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise";
-        }else if(exerciseJSON.exercises[i].status == "started"){
+        } else if (exerciseJSON.exercises[i].status == "started") {
             element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-started";
-        }else if(exerciseJSON.exercises[i].status == "completed"){
+        } else if (exerciseJSON.exercises[i].status == "completed") {
             element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-completed";
-        }else{
+        } else {
             console.log("Invalid status for exercise: " + exerciseJSON.exercises[i].id + "!")
         }
         element.id = exerciseJSON.exercises[i].id;
@@ -53,12 +59,16 @@ function goToWeekOne() {
 }
 
 function fetchExerciseInformation() {
-    let path = "exercise_information.json";
-    console.log("Exercise path: " + path);
-    let actualJSON = null;
-    loadJSON(function (response) {
-        actualJSON = JSON.parse(response);
-    }, path);
+    let actualJSON = sessionStorage.getItem("exercisJSON");
+    if (actualJSON === null) {
+        let path = "exercise_information.json";
+        console.log("Exercise path: " + path);
+        loadJSON(function (response) {
+            actualJSON = JSON.parse(response);
+        }, path);
+    } else {
+        actualJSON = JSON.parse(actualJSON);
+    }
     return actualJSON;
 }
 
@@ -66,14 +76,7 @@ function fetchExerciseInformation() {
 
 function fetchExerciseInformationByID(id) {
     console.log("ID: " + id);
-    let temp = localStorage.getItem("exerciseJSON");
-    if (temp === null) {
-        temp = fetchExerciseInformation();
-        console.log("No JSON in localstorage");
-    } else {
-        temp = JSON.parse(temp);
-        console.log("JSON in localstorage");
-    }
+    let temp = fetchExerciseInformation();
     for (i = 0; i < temp.exercises.length; i++) {
         if (temp.exercises[i].id == id) {
             console.log("Exercise found!");
@@ -102,4 +105,20 @@ function loadJSON(callback, path) {
         }
     };
     xobj.send(null);
+}
+
+function saveExerciseInformation(data) {
+    let temp = fetchExerciseInformation();
+    for (i = 0; i < temp.exercises.length; i++) {
+        if (temp.exercises[i].id == data.id) {
+            console.log("Saving data for exercise with id " + data.id);
+            temp.exercises[i] = data;
+        }
+    }
+    updateSessionStorage("exerciseJSON", temp);
+}
+
+function updateSessionStorage(key, data) {
+    let stringifiedData = JSON.stringify(data);
+    sessionStorage.setItem(key, stringifiedData);
 }

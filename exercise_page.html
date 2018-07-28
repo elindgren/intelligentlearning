@@ -7,13 +7,18 @@
 
 <!--Our css-->
 <link rel="stylesheet" href="intelligentlearning.css">
-<!--Our scripts-->
-<script src = "exercise.js" type = "text/javascript" ></script>
 
+<!--Our scripts-->
+<script src="exercise.js" type="text/javascript"></script>
+
+<!--Declare the document head-->
 <head>
     <meta charset="UTF-8">
     <title>Exercise page</title>
 </head>
+
+
+<!-- Always shows a header, even in smaller screens-->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
@@ -38,10 +43,10 @@
             <!-- Content goes here -->
             <div class="question-container">
                 <div class="text-container" id="questionTitle"></div>
-                <div class="text-container" id = "questionText">
+                <div class="text-container" id="questionText">
                     Default text
                 </div>
-                <img src="images/default.png" class="image-container" id = "questionImage">
+                <img src="images/default.png" class="image-container" id="questionImage">
             </div>
             <div class="answer-container">
                 <div class="text-container">
@@ -77,7 +82,7 @@
      * Used to fetch value when enter is pressed in input
      */
     function enterPressed() {
-        if(event.key === "Enter"){
+        if (event.key === "Enter") {
             checkResult();
         }
     }
@@ -87,13 +92,14 @@
         exerciseJSON.tries++;
         exerciseJSON.last_answer = userInput;
         console.log("Try number " + exerciseJSON.tries + ":");
-        if (userInput == exerciseJSON.exercise_answer){
+        if (userInput == exerciseJSON.exercise_answer) {
             console.log("Answer is right!");
             exerciseJSON.status = "completed";
         } else {
             console.log("Answer is wrong!");
             exerciseJSON.status = "started";
         }
+        saveExerciseInformation(exerciseJSON);
     }
 
     window.onload = function setExerciseName() {
