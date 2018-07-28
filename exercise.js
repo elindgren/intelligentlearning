@@ -12,7 +12,17 @@ window.onload = function sadboi() {
     for (i = 0; i < exerciseJSON.exercises.length; i++) {
         //Create a button element and style it accordingly
         let element = document.createElement("button");
-        element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise";
+
+        //Set the status of the button
+        if(exerciseJSON.exercises[i].status == "not_started") {
+            element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise";
+        }else if(exerciseJSON.exercises[i].status == "started"){
+            element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-started";
+        }else if(exerciseJSON.exercises[i].status == "completed"){
+            element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-completed";
+        }else{
+            console.log("Invalid status for exercise: " + exerciseJSON.exercises[i].id + "!")
+        }
         element.id = exerciseJSON.exercises[i].id;
         //Create a thumbnail and text element - place them inside the button.
         let exerciseThumbnail = document.createElement("img");
@@ -82,7 +92,10 @@ function fetchExerciseInformationByID(id) {
 function loadJSON(callback, path) {
     let xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open("GET", path, true);
+    xobj.open("GET", path, false); // For now the async has to be false, otherwise the window load will execute before
+                                   // the callback has been completed.
+    xobj.setRequestHeader("Cache-Control", "max-age=0"); //This is to avoid the caching of the http response.
+                                                         //Otherwise changes to JSON won't take effect.
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4 && xobj.status === 200) {
             callback(xobj.responseText);

@@ -74,3 +74,58 @@ ul.breadcrumb li a:hover {
     width: 80%;
     padding: 20px;
 }
+/******************************************** Exercise Styling CSS ********************************************/
+.exercise{
+    width : 250px; height: 200px;
+    margin: 20px;
+    /*Adding a grey border as standard - will turn green when exercise has been completed*/
+    /*border: 2px solid lightgrey;*/
+}
+/*These are added on top of the standard css for the exercise buttons on the main page.*/
+.exercise-completed{
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(103,165,99, 0.60);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background: rgba(103,165,99, 0.20);
+}
+.exercise-completed:hover{
+    background: rgba(103,165,99, 0.20);
+    /*Add a raised effect? For example increasing the shadows to indicate hover?*/
+}
+.exercise-completed:active {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    background: rgba(103,165,99, 0.40);
+}
+.exercise-completed:focus:not(:active) {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+    background: rgba(103,165,99, 0.40);
+}
+.exercise-started{
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(63,123,191, 0.60); /* Adjust alpha to change the feel of the borders. */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background: rgba(63,123,191, 0.20);
+}
+.exercise-started:hover{
+    background: rgba(63,123,191, 0.20);
+    /*Add a raised effect? For example increasing the shadows to indicate hover?*/
+}
+.exercise-started:active {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    background: rgba(63,123,191, 0.40);
+}
+.exercise-started:focus:not(:active) {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+    background: rgba(63,123,191, 0.40);
+}
+/*Styling for the divider containing all the xercises on the main page*/
+.exercise-container{
+    padding: 40px;
+    margin: auto;
+    width: 60%;
+    /*Add a shadow to the card*/
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
