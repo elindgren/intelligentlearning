@@ -22,6 +22,30 @@
     "title": "Kardanknut",
     "exercise_text": "Varför gör du så här mot dig själv?",
     "exercise_answer": 3
+  },
+  {
+    "id": 3,
+    "status": "not_started",
+    "image_path": "images/uppgift2.png",
+    "title": "Kardanknut",
+    "exercise_text": "Varför gör du så här mot dig själv?",
+    "exercise_answer": 3
+  },
+  {
+    "id": 4,
+    "status": "not_started",
+    "image_path": "images/uppgift2.png",
+    "title": "Kardanknut",
+    "exercise_text": "Varför gör du så här mot dig själv?",
+    "exercise_answer": 3
+  },
+  {
+    "id": 5,
+    "status": "not_started",
+    "image_path": "images/uppgift2.png",
+    "title": "Kardanknut",
+    "exercise_text": "Varför gör du så här mot dig själv?",
+    "exercise_answer": 3
   }
-]
+  ]
 }
