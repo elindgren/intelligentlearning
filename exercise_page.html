@@ -48,14 +48,12 @@
                     Enter your answer
                 </div>
                 <!--Create an answer form using a numeric textfield -->
-                <form class="answer-form-container">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
-                               id="exerciseAnswer" oninput="checkResult">
-                        <label class="mdl-textfield__label" for="exerciseAnswer">Answer</label>
-                        <span class="mdl-textfield__error">Input is not a number!</span>
-                    </div>
-                </form>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                           id="exerciseAnswer" onkeydown="enterPressed()">
+                    <label class="mdl-textfield__label" for="exerciseAnswer">Answer</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
             </div>
         </div>
     </main>
@@ -66,9 +64,27 @@
 <script>
     let exerciseJSON = null; //Set availability of this JSON for answer checking etc.
 
+    /**
+     * Used to fetch value when enter is pressed in input
+     */
+    function enterPressed() {
+        if(event.key === "Enter"){
+            checkResult();
+        }
+    }
+
     function checkResult() {
-        let result = exerciseAnswer.ParseForm();
-        console.log(result);
+        let userInput = document.getElementById("exerciseAnswer").value;
+        exerciseJSON.tries++;
+        exerciseJSON.last_answer = userInput;
+        console.log("Try number " + exerciseJSON.tries + ":");
+        if (userInput == exerciseJSON.exercise_answer){
+            console.log("Answer is right!");
+            exerciseJSON.status = "completed";
+        } else {
+            console.log("Answer is wrong!");
+            exerciseJSON.status = "started";
+        }
     }
 
     window.onload = function setExerciseName() {
