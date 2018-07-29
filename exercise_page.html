@@ -56,7 +56,7 @@
                 <div class="mdl-textfield mdl-js-textfield">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
                            id="exerciseAnswer" onkeydown="enterPressed()">
-                    <label class="mdl-textfield__label" for="exerciseAnswer">Answer</label>
+                    <label class="mdl-textfield__label" for="exerciseAnswer" id="exerciseAnswerLabel"></label>
                     <span class="mdl-textfield__error">Input is not a number!</span>
                 </div>
             </div>
@@ -124,6 +124,14 @@
 
         // Set question text
         document.getElementById("questionText").innerText = exerciseJSON.exercise_text;
+
+        // Set text in input box to whatever was last entered
+        let lastAnswer = exerciseJSON.last_answer;
+        if (lastAnswer != "") {
+            document.getElementById("exerciseAnswer").value = exerciseJSON.last_answer;
+        } else {
+            document.getElementById("exerciseAnswerLabel").innerText = "Answer";
+        }
     };
 
     function capitaliseFirst(inputString) {
