@@ -59,20 +59,25 @@ function goToWeekOne() {
 }
 
 function fetchExerciseInformation() {
-    let actualJSON = sessionStorage.getItem("exercisJSON");
-    if (actualJSON === null) {
+    let actualJSON = null;
+    if (storageAvailable("sessionStorage")) {
+        actualJSON = sessionStorage.getItem("exerciseJSON");
+    }
+    if (actualJSON == null) {
+        console.log("Loading JSON from file");
         let path = "exercise_information.json";
         console.log("Exercise path: " + path);
         loadJSON(function (response) {
             actualJSON = JSON.parse(response);
         }, path);
     } else {
+        console.log("Loading JSON from storage");
         actualJSON = JSON.parse(actualJSON);
     }
     return actualJSON;
 }
 
-//Exercise statuses: started, not_started, finishedx
+//Exercise statuses: started, not_started, finished
 
 function fetchExerciseInformationByID(id) {
     console.log("ID: " + id);
@@ -121,4 +126,28 @@ function saveExerciseInformation(data) {
 function updateSessionStorage(key, data) {
     let stringifiedData = JSON.stringify(data);
     sessionStorage.setItem(key, stringifiedData);
+}
+
+function storageAvailable(type) {
+    try {
+        let storage = window[type],
+            x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+                // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            storage.length !== 0;
+    }
 }
