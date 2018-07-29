@@ -59,6 +59,8 @@
                     <label class="mdl-textfield__label" for="exerciseAnswer" id="exerciseAnswerLabel"></label>
                     <span class="mdl-textfield__error">Input is not a number!</span>
                 </div>
+                <!--Create a container that will tell whether the result was right or wrong-->
+                <div class="text-container" id="answerStatus"></div>
             </div>
         </div>
     </main>
@@ -89,15 +91,20 @@
 
     function checkResult() {
         let userInput = document.getElementById("exerciseAnswer").value;
+        let answerStatus = document.getElementById("answerStatus");
         exerciseJSON.tries++;
         exerciseJSON.last_answer = userInput;
         console.log("Try number " + exerciseJSON.tries + ":");
         if (userInput == exerciseJSON.exercise_answer) {
             console.log("Answer is right!");
             exerciseJSON.status = "completed";
+            answerStatus.innerText = "Correct";
+            answerStatus.style.color = "#39b728";
         } else {
             console.log("Answer is wrong!");
             exerciseJSON.status = "started";
+            answerStatus.innerText = "Incorrect";
+            answerStatus.style.color = "#b72828";
         }
         saveExerciseInformation(exerciseJSON);
     }
