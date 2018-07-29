@@ -90,12 +90,12 @@
     }
 
     function checkResult() {
-        let userInput = document.getElementById("exerciseAnswer").value;
+        let userInput = Number(document.getElementById("exerciseAnswer").value);
         let answerStatus = document.getElementById("answerStatus");
         exerciseJSON.tries++;
         exerciseJSON.last_answer = userInput;
         console.log("Try number " + exerciseJSON.tries + ":");
-        if (userInput == exerciseJSON.exercise_answer) {
+        if (userInput === Number(exerciseJSON.exercise_answer)) {
             console.log("Answer is right!");
             exerciseJSON.status = "completed";
             answerStatus.innerText = "Correct";
