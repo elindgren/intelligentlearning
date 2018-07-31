@@ -22,6 +22,8 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
+            <!--Title-->
+            Assignments
             <!--Create breadcrumbs to show current path-->
             <ul class="breadcrumb">
                 <li><a href="main.html"><i class="material-icons md-house icon-align">home</i></a></li>
@@ -127,7 +129,7 @@
         questionTitle.innerText = exerciseName;
         questionTitle.style.fontSize = "35px"; //Set the title font size
 
-        // Set question image - Overrides the defualt image if an image can be found
+        // Set question image - Overrides the default image if an image can be found
         document.getElementById("questionImage").src = exerciseJSON.image_path;
 
         // Set question text
