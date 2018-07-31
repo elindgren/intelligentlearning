@@ -55,24 +55,24 @@
                 <!--Create an answer form using a numeric textfield -->
                 <div class="mdl-textfield mdl-js-textfield">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
-                           id="exerciseAnswer" onkeydown="enterPressed()">
+                           id="exerciseAnswer" onkeydown="enterPressed(event)">
                     <label class="mdl-textfield__label" for="exerciseAnswer" id="exerciseAnswerLabel"></label>
                     <span class="mdl-textfield__error">Input is not a number!</span>
                 </div>
                 <!--Create a container that will tell whether the result was right or wrong-->
                 <div class="text-container" id="answerStatus"></div>
             </div>
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Intelligent Learning</div>
+                    <u1 class="mdl-mini-footer__link-list">
+                        <li><a href="main.html">Help</a></li>
+                        <li><a href="main.html">Privacy & Terms</a></li>
+                    </u1>
+                </div>
+            </footer>
         </div>
     </main>
-    <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">Intelligent Learning</div>
-            <u1 class="mdl-mini-footer__link-list">
-                <li><a href="main.html">Help</a></li>
-                <li><a href="main.html">Privacy & Terms</a></li>
-            </u1>
-        </div>
-    </footer>
 </div>
 </html>
 
@@ -83,8 +83,9 @@
     /**
      * Used to fetch value when enter is pressed in input
      */
-    function enterPressed() {
+    function enterPressed(event) {
         if (event.key === "Enter") {
+            console.log("Enter pressed");
             checkResult();
         }
     }

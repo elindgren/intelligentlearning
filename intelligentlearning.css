@@ -61,8 +61,10 @@ ul.breadcrumb li a:hover {
 }
 .answer-container{
     /* The container for the answer form card */
-    padding: 40px;
+    padding: 20px;
+    padding-bottom: 0px;
     margin:auto;
+    margin-bottom: 1%;
     width: 60%;
     /*Add a shadow to the card*/
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -71,8 +73,11 @@ ul.breadcrumb li a:hover {
 .answer-form-container{
     /*The styling for the answer form */
     margin: auto; /* Center the text container */
-    width: 80%;
+    /*width: 80%;*/
     padding: 20px;
+    /*border-style: dotted;*/
+    /*border-color: black;*/
+    /*border-width: medium;*/
 }
 /******************************************** Exercise Styling CSS ********************************************/
 .exercise{
@@ -135,8 +140,9 @@ ul.breadcrumb li a:hover {
 .exercises-weekly-container{
     padding: 40px;
     margin: auto;
+    margin-bottom: 1%;
     /*margin-left: 10%;*/
-    width: 60%;
+    width: 80%;
     /*Add a shadow to the card*/
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
@@ -148,5 +154,4 @@ ul.breadcrumb li a:hover {
     /*border-style: dotted;*/
     /*border-color: black;*/
     /*border-width: medium;*/
-
 }
