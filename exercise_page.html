@@ -23,7 +23,7 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!--Title-->
-            Assignments
+            <span class="mdl-layout-title">Dashboard</span>
             <!--Create breadcrumbs to show current path-->
             <ul class="breadcrumb">
                 <li><a href="main.html"><i class="material-icons md-house icon-align">home</i></a></li>
@@ -32,12 +32,12 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Links</span>
+        <span class="mdl-layout-title">Under arbete</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
+            <!--<a class="mdl-navigation__link" href="">Link</a>-->
+            <!--<a class="mdl-navigation__link" href="">Link</a>-->
+            <!--<a class="mdl-navigation__link" href="">Link</a>-->
+            <!--<a class="mdl-navigation__link" href="">Link</a>-->
         </nav>
     </div>
     <main class="mdl-layout__content">
@@ -49,20 +49,20 @@
                     Default text
                 </div>
                 <img src="images/default.png" class="image-container" id="questionImage">
-            </div>
-            <div class="answer-container">
-                <div class="text-container">
-                    Enter your answer
+                <div class="answer-container">
+                    <div class="text-container">
+                        Enter your answer
+                    </div>
+                    <!--Create an answer form using a numeric textfield -->
+                    <div class="mdl-textfield mdl-js-textfield answer-form-container">
+                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                               id="exerciseAnswer" onkeydown="enterPressed(event)">
+                        <label class="mdl-textfield__label" for="exerciseAnswer" id="exerciseAnswerLabel"></label>
+                        <span class="mdl-textfield__error">Input is not a number!</span>
+                    </div>
+                    <!--Create a container that will tell whether the result was right or wrong-->
+                    <span class="text-container" id="answerStatus"></span>
                 </div>
-                <!--Create an answer form using a numeric textfield -->
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
-                           id="exerciseAnswer" onkeydown="enterPressed(event)">
-                    <label class="mdl-textfield__label" for="exerciseAnswer" id="exerciseAnswerLabel"></label>
-                    <span class="mdl-textfield__error">Input is not a number!</span>
-                </div>
-                <!--Create a container that will tell whether the result was right or wrong-->
-                <div class="text-container" id="answerStatus"></div>
             </div>
             <footer class="mdl-mini-footer">
                 <div class="mdl-mini-footer__left-section">
