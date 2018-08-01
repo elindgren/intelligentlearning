@@ -128,6 +128,10 @@ ul.breadcrumb li a:hover {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
     background: rgba(63,123,191, 0.40);
 }
+/*This one is used purely to offset other exercises*/
+.exercise-dummy {
+    visibility: hidden;
+}
 /*Styling for the divider containing all the xercises on the main page*/
 .exercise-container{
     padding: 40px;

@@ -15,10 +15,38 @@ window.onload = function sadboi() {
     }
     console.log("Total tries: " + totalTries);
 
-    for (i = 0; i < exerciseJSON.exercises.length; i++) {
+    let required = [];
+    let required_sets = [];
+    let non_required = [];
+
+    for (let i = 0; i < exerciseJSON.exercises.length; i++) {
+        // Create button for exercise
         let element = initExerciseButton(exerciseJSON.exercises[i]);
+
+        // Add it to array based on how required it is
+        if (exerciseJSON.required.includes(exerciseJSON.exercises[i].id)) {
+            required.push(element);
+        } else {
+            let found = false;
+            for (let j = 0; j < exerciseJSON.required_sets.length; j++) {
+                if (exerciseJSON.required_sets[j].includes(exerciseJSON.exercises[i].id)) {
+                    required_sets[j].push(element);
+                    found = true;
+                    break
+                }
+            }
+
+            if (!found) {
+                non_required.push(element);
+            }
+        }
         exerciseContainer.appendChild(element);
     }
+
+    let map = generateExerciseMap(required, required_sets);
+    // TODO: Display elements based on map
+    // TODO: Draw lines between elements
+
 };
 
 function initExerciseButton(exercise) {
@@ -53,6 +81,65 @@ function initExerciseButton(exercise) {
     };
 
     return button;
+}
+
+function generateExerciseMap(required, required_sets) {
+    let map_width = required.length + required_sets.length;
+    let map_height = 1;
+    for (let i = 0; i < required_sets.length; i++) {
+        if (required_sets[i].length > map_height) {
+            map_height = required_sets[i].length;
+        }
+    }
+
+    let map = [];
+
+    let required_index = 0;
+    let required_set_index = 0;
+    for (let column_num = 0; column_num < map_width; column_num++) {
+        let element_found = false;
+        let column = [];
+        // Prepare column by filling it with hidden elements
+        for (let row_num = 0; row_num < map_height; row_num++) {
+            let blank = document.createElement("button");
+            blank.className = "exercise exercise-dummy";
+            column[row_num] = blank;
+        }
+
+        // Add appropriate elements to map
+        if (required_index <= required.length && required_set_index <= required_sets.length) {
+            if (required[required_index].id < required_sets[required_set_index][0].id) {
+                column = addRequiredToColumn(column, required[required_index]);
+                required_index++;
+            } else {
+                column = addRequiredSetToColumn(column, required_sets[required_set_index]);
+                required_set_index++;
+            }
+        } else if (!(required_index >= required.length && required_set_index >= required_sets.length)) {
+            if (required_index >= required.length) {
+                column = addRequiredToColumn(column, required[required_index]);
+                required_index++;
+            } else {
+                column = addRequiredSetToColumn(column, required_sets[required_set_index]);
+                required_set_index++;
+            }
+        }
+
+        map[column_num] = column;
+    }
+    return map;
+}
+
+function addRequiredToColumn(column, element) {
+    column[Math.floor(column.length / 2)] = element;
+    return column;
+}
+
+function addRequiredSetToColumn(column, elements) {
+    for(let i = 0; i < elements.length; i++){
+        column[i + math.floor((column.length - elements.length) / 2)] = elements[i];
+    }
+    return column;
 }
 
 //This function returns to WeekOne. For breadcrumbs.
