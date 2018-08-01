@@ -16,7 +16,7 @@ window.onload = function sadboi() {
     console.log("Total tries: " + totalTries);
 
     let required = [];
-    let required_sets = [];
+    let required_sets = [[]]; //Added a second bracket, otherwise your push to [j] on row 33 won't work //Eric
     let non_required = [];
 
     for (let i = 0; i < exerciseJSON.exercises.length; i++) {
