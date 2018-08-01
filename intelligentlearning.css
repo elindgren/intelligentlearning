@@ -162,8 +162,9 @@ ul.breadcrumb li a:hover {
 }
 .exercises-weekly-text-container{
     margin: auto;
-    padding-left: 40px;
-    font-size: 25px;
+    /*padding-left: 40px;*/
+    width: 80%;
+    font-size: 30px;
     /*border-style: dotted;*/
     /*border-color: black;*/
     /*border-width: medium;*/
