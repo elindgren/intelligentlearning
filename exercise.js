@@ -16,42 +16,44 @@ window.onload = function sadboi() {
     console.log("Total tries: " + totalTries);
 
     for (i = 0; i < exerciseJSON.exercises.length; i++) {
-        //Create a button element and style it accordingly
-        let element = document.createElement("button");
-
-        //Set the status of the button
-        if (exerciseJSON.exercises[i].status == "not_started") {
-            element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise";
-        } else if (exerciseJSON.exercises[i].status == "started") {
-            element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-started";
-        } else if (exerciseJSON.exercises[i].status == "completed") {
-            element.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-completed";
-        } else {
-            console.log("Invalid status for exercise: " + exerciseJSON.exercises[i].id + "!")
-        }
-        element.id = exerciseJSON.exercises[i].id;
-        //Create a thumbnail and text element - place them inside the button.
-        let exerciseThumbnail = document.createElement("img");
-        exerciseThumbnail.src = exerciseJSON.exercises[i].image_path;
-        exerciseThumbnail.style.height = "150px";
-        exerciseThumbnail.style.width = "125px";
-        // exerciseThumbnail.style.backgroundSize = "250px 200px";
-        // let exerciseText = document.createTextNode(exerciseJSON.exercises[i].title);
-        element.appendChild(exerciseThumbnail);
-        // element.appendChild(exerciseText);
-
-
-        //element.innerHTML = '<img src="images/hej.jpg" width="10%" height = "10%"/>';
-        //Add an onclick-function which moves to the exercise page and loads the settings for the current exercise.
-        element.onclick = function () {
-            console.log(this.id);
-            //Pass the current exercise as a parameter
-            location.href = "exercise_page.html" + "?exercise=" + this.id;
-            return false;
-        };
+        let element = initExerciseButton(exerciseJSON.exercises[i]);
         exerciseContainer.appendChild(element);
     }
 };
+
+function initExerciseButton(exercise) {
+    let button = document.createElement("button");
+    //Set the status of the button
+    if (exercise.status === "not_started") {
+        button.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise";
+    } else if (exercise.status === "started") {
+        button.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-started";
+    } else if (exercise.status === "completed") {
+        button.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise exercise-completed";
+    } else {
+        console.log("Invalid status for exercise: " + exercise.id + "!");
+        button.className = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised exercise";
+    }
+
+    button.id = exercise.id;
+
+    //Create a thumbnail and text element - place them inside the button.
+    let exerciseThumbnail = document.createElement("img");
+    exerciseThumbnail.src = exercise.image_path;
+    exerciseThumbnail.style.height = "150px";
+    exerciseThumbnail.style.width = "125px";
+    button.appendChild(exerciseThumbnail);
+
+    //Add an onclick-function which moves to the exercise page and loads the settings for the current exercise.
+    button.onclick = function () {
+        console.log(this.id);
+        //Pass the current exercise as a parameter
+        location.href = "exercise_page.html" + "?exercise=" + this.id;
+        return false;
+    };
+
+    return button;
+}
 
 //This function returns to WeekOne. For breadcrumbs.
 function goToWeekOne() {
