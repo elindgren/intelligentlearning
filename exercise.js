@@ -17,6 +17,9 @@ window.onload = function sadboi() {
 
     let required = [];
     let required_sets = [];
+    for (let i = 0; i < exerciseJSON.required_sets.length; i++) {
+        required_sets[i] = [];
+    }
     let non_required = [];
 
     for (let i = 0; i < exerciseJSON.exercises.length; i++) {
@@ -136,7 +139,7 @@ function addRequiredToColumn(column, element) {
 }
 
 function addRequiredSetToColumn(column, elements) {
-    for(let i = 0; i < elements.length; i++){
+    for (let i = 0; i < elements.length; i++) {
         column[i + math.floor((column.length - elements.length) / 2)] = elements[i];
     }
     return column;
