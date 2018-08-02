@@ -145,9 +145,11 @@ ul.breadcrumb li a:hover {
     /*box-sizing: border-box;*/
 }
 .exercises-weekly-container{
-    overflow: auto;
-    white-space: nowrap;
-    padding: 40px;
+    /*overflow: auto;*/
+    /*white-space: nowrap;*/
+    display: grid;
+    /*padding: 40px;*/
+    grid-gap: 40px;
     margin: auto;
     margin-bottom: 1%;
     /*margin-left: 10%;*/

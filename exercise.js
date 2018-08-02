@@ -43,14 +43,34 @@ window.onload = function sadboi() {
                 non_required.push(element);
             }
         }
-        exerciseContainer.appendChild(element);
+        // exerciseContainer.appendChild(element);
     }
 
     let map = generateExerciseMap(required, required_sets);
-    // TODO: Display elements based on map
+    displayMap(map, exerciseContainer);
     // TODO: Draw lines between elements
 
 };
+
+function displayMap(map, container) {
+    // TODO: Display elements based on map
+    container.style.gridTemplateColumns = "repeat(" + map.length + ", 1fr);";
+    container.style.gridTemplateRows = "repeat(" + map[0].length + ", 1fr);";
+    // for (let column = 0; column < map.length; column++){
+    //     for (let row = 0; row < map[column].length; row++){
+    //         map[column][row].style.gridColumn = (column + 1) + "";
+    //         map[column][row].style.gridRow = (row + 1) + "";
+    //         container.appendChild(map[column][row]);
+    //     }
+    // }
+    for (let row = 0; row < map[0].length; row++){
+        for (let column = 0; column < map.length; column++){
+            map[column][row].style.gridColumn = (column + 1) + "";
+            map[column][row].style.gridRow = (row + 1) + "";
+            container.appendChild(map[column][row]);
+        }
+    }
+}
 
 function initExerciseButton(exercise) {
     let button = document.createElement("button");
@@ -110,7 +130,7 @@ function generateExerciseMap(required, required_sets) {
         }
 
         // Add appropriate elements to map
-        if (required_index <= required.length && required_set_index <= required_sets.length) {
+        if (required_index < required.length && required_set_index < required_sets.length) {
             if (required[required_index].id < required_sets[required_set_index][0].id) {
                 column = addRequiredToColumn(column, required[required_index]);
                 required_index++;
@@ -119,7 +139,7 @@ function generateExerciseMap(required, required_sets) {
                 required_set_index++;
             }
         } else if (!(required_index >= required.length && required_set_index >= required_sets.length)) {
-            if (required_index >= required.length) {
+            if (required_index < required.length) {
                 column = addRequiredToColumn(column, required[required_index]);
                 required_index++;
             } else {
@@ -140,7 +160,7 @@ function addRequiredToColumn(column, element) {
 
 function addRequiredSetToColumn(column, elements) {
     for (let i = 0; i < elements.length; i++) {
-        column[i + math.floor((column.length - elements.length) / 2)] = elements[i];
+        column[i + Math.floor((column.length - elements.length) / 2)] = elements[i];
     }
     return column;
 }
