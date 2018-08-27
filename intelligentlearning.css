@@ -34,9 +34,9 @@ ul.breadcrumb li a:hover {
 /******************************************** Exercise Page CSS ********************************************/
 .question-container {
     /*Increase the margin a bit to make it look more */
-    padding: 60px;
+    padding: 2%;
     margin: auto;
-    width: 60%;
+    width: 80%;
     margin-bottom: 1%;
     /*Add a shadow to the card*/
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -48,7 +48,7 @@ ul.breadcrumb li a:hover {
     width: 80%;
     /*Set the text color to black*/
     color: black;
-    font-size: 20px;
+    font-size: 150%;
     /*Center the text*/
     text-align: left;
     padding: 20px;
@@ -59,24 +59,24 @@ ul.breadcrumb li a:hover {
     margin-right: auto;
     width: auto;
     height: auto;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 18%;
+    max-height: 18%;
     padding: 20px;
 }
 .answer-container{
     /* The container for the answer form card */
-    padding: 20px;
-    padding-bottom: 0px;
-    margin:auto;
-    margin-bottom: 1%;
-    width: 80%;
-    /*Add a shadow to the card*/
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    /*This gives the answer card a little bit more weight.*/
-    border-color: rgba(63, 69, 159, 0.2);
-    border-style: solid;
-    border-width: thin;
+    /*padding: 20px;*/
+    /*padding-bottom: 0px;*/
+    /*margin:auto;*/
+    /*margin-bottom: 1%;*/
+    /*width: 80%;*/
+    /*!*Add a shadow to the card*!*/
+    /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
+    /*box-sizing: border-box;*/
+    /*!*This gives the answer card a little bit more weight.*!*/
+    /*border-color: rgba(63, 69, 159, 0.2);*/
+    /*border-style: solid;*/
+    /*border-width: thin;*/
     /*border-style: dotted;*/
     /*border-color: black;*/
     /*border-width: medium;*/
@@ -96,10 +96,16 @@ ul.breadcrumb li a:hover {
 }
 /******************************************** Exercise Styling CSS ********************************************/
 .exercise{
-    width : 250px; height: 200px;
+    /*width : 250px; */
+    /*height: 200px;*/
+    width: 15%;
+    height: 12%;
+    max-width: 15%;
+    max-height: 12%;
     margin: 20px;
+    padding: 1%;
     /*Adding a grey border as standard - will turn green when exercise has been completed*/
-    /*border: 2px solid lightgrey;*/
+    /*border: 1px solid lightgrey;*/
 }
 /*These are added on top of the standard css for the exercise buttons on the main page.*/
 .exercise-completed{
@@ -142,7 +148,7 @@ ul.breadcrumb li a:hover {
 }
 /*Styling for the divider containing all the xercises on the main page*/
 .exercise-container{
-    padding: 40px;
+    padding: 2%;
     margin: auto;
     width: 85%;
     /*border-style: dotted;*/
@@ -153,7 +159,7 @@ ul.breadcrumb li a:hover {
     /*box-sizing: border-box;*/
 }
 .exercises-weekly-container{
-    padding: 40px;
+    padding: 2%;
     margin: auto;
     margin-bottom: 1%;
     /*margin-left: 10%;*/
@@ -166,7 +172,7 @@ ul.breadcrumb li a:hover {
     margin: auto;
     /*padding-left: 40px;*/
     width: 80%;
-    font-size: 30px;
+    font-size: 200%;
     /*border-style: dotted;*/
     /*border-color: black;*/
     /*border-width: medium;*/
