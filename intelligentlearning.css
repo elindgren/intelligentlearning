@@ -48,10 +48,15 @@ ul.breadcrumb li a:hover {
     width: 85%;
     /*Set the text color to black*/
     color: black;
-    font-size: 150%;
+    font-size: 120%;
     /*Center the text*/
     text-align: left;
     padding: 20px;
+    /*border-style: solid;*/
+    /*border-width: thin;*/
+    /*border-style: dotted;*/
+    /*border-color: black;*/
+    /*border-width: medium;*/
 }
 .image-container{
     display: block; /* Make the image into a block element */
@@ -67,9 +72,9 @@ ul.breadcrumb li a:hover {
     /* The container for the answer form card */
     /*padding: 20px;*/
     /*padding-bottom: 0px;*/
-    /*margin:auto;*/
+    margin:auto;
     /*margin-bottom: 1%;*/
-    /*width: 80%;*/
+    width: 85%;
     /*!*Add a shadow to the card*!*/
     /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
     /*box-sizing: border-box;*/
@@ -90,7 +95,7 @@ ul.breadcrumb li a:hover {
     /*padding: 20px;*/
     margin-bottom: 1%;
     /*Align answer form with text.*/
-    margin-left: 10%;
+    /*margin-left: 10%;*/
     /*border-style: dotted;*/
     /*border-color: black;*/
     /*border-width: medium;*/
@@ -99,11 +104,11 @@ ul.breadcrumb li a:hover {
 .exercise{
     /*width : 250px; */
     /*height: 200px;*/
-    width: 13%;
-    height: 10%;
-    max-width: 20%;
-    max-height: 17%;
-    margin: 15px;
+    width: 15%;
+    height: 12%;
+    max-width: 15%;
+    max-height: 12%;
+    margin: 2%;
     padding: 1%;
     /*Adding a grey border as standard - will turn green when exercise has been completed*/
     /*border: 1px solid lightgrey;*/

@@ -50,10 +50,10 @@
                     Default text
                 </div>
                 <img src="images/default.png" class="image-container" id="questionImage">
+                <div class="text-container">
+                    Enter your answer
+                </div>
                 <div class="answer-container">
-                    <div class="text-container">
-                        Enter your answer
-                    </div>
                     <!--Create an answer form using a numeric textfield -->
                     <div class="mdl-textfield mdl-js-textfield answer-form-container">
                         <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
@@ -128,7 +128,7 @@
         // Set question title
         let questionTitle = document.getElementById("questionTitle");
         questionTitle.innerText = exerciseName;
-        questionTitle.style.fontSize = "180%"; //Set the title font size
+        questionTitle.style.fontSize = "150%"; //Set the title font size
 
         // Set question image - Overrides the default image if an image can be found
         document.getElementById("questionImage").src = exerciseJSON.image_path;
