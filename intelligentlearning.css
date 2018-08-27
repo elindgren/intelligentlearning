@@ -98,10 +98,10 @@ ul.breadcrumb li a:hover {
 .exercise{
     /*width : 250px; */
     /*height: 200px;*/
-    width: 15%;
-    height: 12%;
-    max-width: 15%;
-    max-height: 12%;
+    width: 20%;
+    height: 17%;
+    max-width: 20%;
+    max-height: 17%;
     margin: 20px;
     padding: 1%;
     /*Adding a grey border as standard - will turn green when exercise has been completed*/
