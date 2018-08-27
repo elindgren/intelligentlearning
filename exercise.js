@@ -33,8 +33,8 @@ window.onload = function sadboi() {
         //Create a thumbnail and text element - place them inside the button.
         let exerciseThumbnail = document.createElement("img");
         exerciseThumbnail.src = exerciseJSON.exercises[i].image_path;
-        exerciseThumbnail.style.height = "150px";
-        exerciseThumbnail.style.width = "125px";
+        exerciseThumbnail.style.height = "auto";
+        exerciseThumbnail.style.width = "100%";
         // exerciseThumbnail.style.backgroundSize = "250px 200px";
         // let exerciseText = document.createTextNode(exerciseJSON.exercises[i].title);
         element.appendChild(exerciseThumbnail);
