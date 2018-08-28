@@ -102,6 +102,9 @@ ul.breadcrumb li a:hover {
     /*border-color: black;*/
     /*border-width: medium;*/
 }
+.submit-button{
+    margin: 2%;
+}
 /******************************************** Exercise Styling CSS ********************************************/
 .exercise{
     /*For Desktop*/
