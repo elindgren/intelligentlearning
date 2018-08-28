@@ -45,7 +45,7 @@ ul.breadcrumb li a:hover {
     /*border-color: black;*/
     /*background-color: green;*/
 }
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (min-width: 768px) {
     .question-container{
         /*Increase the margin a bit to make it look more like a paper*/
         padding: 2%;
