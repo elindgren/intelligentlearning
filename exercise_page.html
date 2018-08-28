@@ -14,6 +14,7 @@
 <!--Declare the document head-->
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise page</title>
 </head>
 
@@ -123,7 +124,7 @@
         exerciseJSON = fetchExerciseInformationByID(temp[1]);
         let exerciseName = exerciseJSON.title;
 
-        // element.innerText = exerciseName;
+        element.innerText = exerciseName;
 
         // Set question title
         let questionTitle = document.getElementById("questionTitle");
