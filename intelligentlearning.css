@@ -6,12 +6,12 @@ ul.breadcrumb {
 
 ul.breadcrumb li {
     display: inline;
-    font-size: 18px;
+    font-size: 145%;
 }
 
 ul.breadcrumb li + li:before {
-    padding: 4px;
-    content: ">";
+    /*padding-right;*/
+    content: "> ";
 }
 
 ul.breadcrumb li a {
@@ -51,7 +51,7 @@ ul.breadcrumb li a:hover {
     font-size: 120%;
     /*Center the text*/
     text-align: left;
-    padding: 20px;
+    padding: 1%;
     /*border-style: solid;*/
     /*border-width: thin;*/
     /*border-style: dotted;*/
@@ -66,7 +66,7 @@ ul.breadcrumb li a:hover {
     height: auto;
     max-width: 18%;
     max-height: 18%;
-    padding: 20px;
+    padding: 1%;
 }
 .answer-container{
     /* The container for the answer form card */
