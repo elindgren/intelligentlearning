@@ -85,7 +85,7 @@ ul.breadcrumb li a:hover {
 @media only screen and (max-width: 768px) {
     .title-text-container{
         /*Slightly smaller text on smaller devices*/
-        font-size: 150%;
+        font-size: 200%;
     }
 }
 
