@@ -33,34 +33,56 @@ ul.breadcrumb li a:hover {
 }
 /******************************************** Exercise Page CSS ********************************************/
 .question-container {
-    /*Increase the margin a bit to make it look more */
     padding: 2%;
-    /*margin: auto;*/
-    /*width: 100%;*/
     margin-bottom: 1%;
-    /*Add a shadow to the card*/
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
+    /*box-sizing: border-box;,*/
+    width: 60%;
     /*border-width: thin;*/
     /*border-style: dotted;*/
     /*border-color: black;*/
+    /*background-color: green;*/
 }
-.text-container{
+@media only screen and (max-width: 768px) {
+    .question-container{
+        /*Increase the margin a bit to make it look more like a paper*/
+        padding: 2%;
+        margin-bottom: 1%;
+        /*Add a shadow to the card*/
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        /*border-width: thin;*/
+        /*border-style: dotted;*/
+        /*border-color: black;*/
+    }
+}
+.text-container {
     /*This container just contains the text to be displayed and applies the desired formating.*/
     margin: auto; /* Center the text container */
     width: 85%;
     /*Set the text color to black*/
     color: black;
-    font-size: 120%;
+    font-size: 150%;
     /*Center the text*/
     text-align: left;
     padding: 1%;
-    /*border-style: solid;*/
-    /*border-width: thin;*/
-    /*border-style: dotted;*/
-    /*border-color: black;*/
-    /*border-width: medium;*/
 }
+@media only screen and (max-width: 768px) {
+    .text-container{
+        /*This container just contains the text to be displayed and applies the desired formating.*/
+        margin: auto; /* Center the text container */
+        width: 85%;
+        /*Set the text color to black*/
+        color: black;
+        font-size: 120%;
+        /*Center the text*/
+        text-align: left;
+        padding: 1%;
+    }
+}
+
 .image-container{
     display: block; /* Make the image into a block element */
     margin-left: auto;
