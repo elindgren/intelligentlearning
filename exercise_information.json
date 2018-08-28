@@ -1,69 +1,39 @@
 {"exercises": [
   {
     "id": 0,
-    "status": "completed",
-    "tries": 0,
-    "image_path": "images/uppgift0.png",
-    "title": "Konisk pendel",
-    "exercise_text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
-    "exercise_answer": 1.2,
-    "last_answer": ""
-  },
-  {
-    "id": 1,
-    "status": "started",
-    "tries": 0,
-    "image_path": "images/uppgift1.png",
-    "title": "Konisk pendel II: Electric Boogaloo",
-    "exercise_text": "Lös mig om du kan!",
-    "exercise_answer": 2,
-    "last_answer": "Test"
-  },
-  {
-    "id": 2,
     "status": "not_started",
     "tries": 0,
-    "image_path": "images/uppgift2.png",
-    "title": "Kardanknut",
-    "exercise_text": "Varför gör du så här mot dig själv?",
-    "exercise_answer": 3,
-    "last_answer": ""
-  },
-  {
-    "id": 3,
-    "status": "not_started",
-    "tries": 0,
-    "image_path": "images/math_image.png",
+    "image_path": "images/linearAlgebra1.png",
     "title": "Övning 1",
     "exercise_text": "Vad är 1+1?",
     "exercise_answer": 2,
     "last_answer": ""
   },
   {
-    "id": 4,
+    "id": 1,
     "status": "not_started",
     "tries": 0,
-    "image_path": "images/math_image.png",
+    "image_path": "images/linearAlgebra2.png",
     "title": "Övning 1",
     "exercise_text": "Vad är 2*2?",
     "exercise_answer": 4,
     "last_answer": ""
   },
   {
-    "id": 5,
+    "id": 2,
     "status": "not_started",
     "tries": 0,
-    "image_path": "images/math_image.png",
+    "image_path": "images/linearAlgebra3.png",
     "title": "Övning 1",
     "exercise_text": "Vad är 10-9?",
     "exercise_answer": 1,
     "last_answer": ""
   },
   {
-    "id": 6,
+    "id": 3,
     "status": "not_started",
     "tries": 0,
-    "image_path": "images/math_image.png",
+    "image_path": "images/linearAlgebra1.png",
     "title": "Övning 1",
     "exercise_text": "Vad är 10+12?",
     "exercise_answer": 22,
