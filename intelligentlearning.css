@@ -65,17 +65,21 @@ ul.breadcrumb li a:hover {
     text-align: left;
     padding: 1%;
 }
-@media only screen and (max-width: 1080px) {
+.title-text-container {
+    /*This container just contains the text to be displayed and applies the desired formating.*/
+    margin: auto; /* Center the text container */
+    width: 85%;
+    /*Set the text color to black*/
+    color: black;
+    font-size: 200%;
+    /*Center the text*/
+    text-align: left;
+    padding: 1%;
+}
+@media only screen and (max-width: 768px) {
     .text-container{
-        /*This container just contains the text to be displayed and applies the desired formating.*/
-        margin: auto; /* Center the text container */
-        width: 85%;
-        /*Set the text color to black*/
-        color: black;
+        /*Slightly smaller text on smaller devices*/
         font-size: 120%;
-        /*Center the text*/
-        text-align: left;
-        padding: 1%;
     }
 }
 
@@ -85,9 +89,15 @@ ul.breadcrumb li a:hover {
     margin-right: auto;
     width: auto;
     height: auto;
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 65%;
+    max-height: 65%;
     padding: 1%;
+}
+@media only screen and (max-width: 768px) {
+    .image-container{
+        max-width: 75%;
+        max-height: 75%;
+    }
 }
 .answer-container{
     /* The container for the answer form card */

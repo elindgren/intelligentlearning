@@ -41,12 +41,12 @@
             <!--<a class="mdl-navigation__link" href="">Link</a>-->
         </nav>
     </div>
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content" style="background-color: #f5f5f5;">
         <div id="mainDiv" class="page-content">
             <!-- Content goes here -->
-            <div class="question-container">
+            <div class="question-container" style="background-color: #FFFFFF;">
                 <!--TODO change font for title and text to correct material design font.-->
-                <div class="text-container" id="questionTitle"></div>
+                <div class="title-text-container" id="questionTitle"></div>
                 <div class="text-container" id="questionText">
                     Default text
                 </div>
@@ -142,7 +142,7 @@
         // Set question title
         let questionTitle = document.getElementById("questionTitle");
         questionTitle.innerText = exerciseName;
-        questionTitle.style.fontSize = "150%"; //Set the title font size
+        // questionTitle.style.fontSize = "150%"; //Set the title font size
 
         // Set question image - Overrides the default image if an image can be found
         document.getElementById("questionImage").src = exerciseJSON.image_path;
