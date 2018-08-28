@@ -35,12 +35,16 @@ ul.breadcrumb li a:hover {
 .question-container {
     /*Increase the margin a bit to make it look more */
     padding: 2%;
-    margin: auto;
-    width: 100%;
+    /*margin: auto;*/
+    /*width: 100%;*/
     margin-bottom: 1%;
+    background-color: green;
     /*Add a shadow to the card*/
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
+    /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
+    /*box-sizing: border-box;*/
+    border-width: thin;
+    border-style: dotted;
+    border-color: black;
 }
 .text-container{
     /*This container just contains the text to be displayed and applies the desired formating.*/
