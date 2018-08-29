@@ -41,8 +41,8 @@
             <!--<a class="mdl-navigation__link" href="">Link</a>-->
         </nav>
     </div>
-    <main class="mdl-layout__content main-content" >
-        <div id="mainDiv" class="page-content">
+    <main class="mdl-layout__content" style="background-color: #FAFAFA;">
+        <div id="mainDiv" class="page-content main-content">
             <!-- Content goes here -->
             <div class="question-container" style="background-color: #FFFFFF;">
                 <!--TODO change font for title and text to correct material design font.-->
@@ -72,10 +72,10 @@
         <footer class="mdl-mini-footer footer">
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logo">Intelligent Learning</div>
-                <u1 class="mdl-mini-footer__link-list">
-                    <li><a href="main.html">Help</a></li>
-                    <li><a href="main.html">Privacy & Terms</a></li>
-                </u1>
+                <!--<u1 class="mdl-mini-footer__link-list">-->
+                    <!--<li><a href="main.html">Help</a></li>-->
+                    <!--<li><a href="main.html">Privacy & Terms</a></li>-->
+                <!--</u1>-->
             </div>
         </footer>
     </main>
@@ -111,8 +111,10 @@
             answerStatus.style.color = "#39b728";
             answerIcon.innerText="check";
             answerIcon.className = "material-icons icon-align md-answer-icon correct-animation";
-            answerIcon.style.color = "#39b728";
-            answerInput.style.borderColor = "#39b728";
+            answerIcon.style.color = "rgb(57,183,40)";
+            answerInput.style.borderColor = "rgb(57,183,40)";
+            answerInput.style.backgroundColor = "rgba(57, 183, 40, 0.1)";
+
         } else {
             console.log("Answer is wrong!");
             exerciseJSON.status = "started";
@@ -120,9 +122,11 @@
             answerStatus.style.color = "rgb(213,0,0)";
             //Remove this icon and just have the red border?
             // answerIcon.innerText="error_outline";
-            // answerIcon.className = "material-icons icon-align md-answer-icon";
-            // answerIcon.style.color = "rgb(213,0,0)";
-            answerInput.style.borderColor = "rgb(213,0,0)"
+            //These two lines ensure that the "correct" check mark animation plays upon each correct answer.
+            answerIcon.className = "material-icons icon-align md-answer-icon";
+            answerIcon.style.color = "rgba(213,0,0,0)";  // Hide the check mark
+            answerInput.style.borderColor = "rgb(213,0,0)";
+            answerInput.style.backgroundColor = "rgba(213,0,0,0)";  // Transparent background if wrong answer.
         }
         saveExerciseInformation(exerciseJSON);
     }

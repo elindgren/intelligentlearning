@@ -279,7 +279,7 @@ ul.breadcrumb li a:hover {
     /*Add a shadow to the card*/
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
-    padding-bottom: 3%;
+    padding-bottom: 6rem;
 }
 @media only screen and (max-width: 768px) {
     .exercises-weekly-container{
@@ -309,14 +309,17 @@ ul.breadcrumb li a:hover {
     bottom: 0;
     left: 0;
     padding: 1rem;
-    /*height: 3%;*/
+}
+@media only screen and (max-width: 768px) {
+    .footer{
+        /*Positions the footer at the bottom on mobile.*/
+        position: relative;
+    }
 }
 .main-content{
-    /*This is the styling for the <main> tag of the page. It sets to background color to look like paper
-    and adds padding to properly space the footer.*/
-    background-color: #FAFAFA;
-    padding-bottom: 20%;
-    border-style: dotted;
-    border-color: black;
-    border-width: medium;
+    /*This is the styling for the <main> tag of the page. It adds padding to properly space the footer */
+    padding-bottom: 6rem;
+    /*border-style: dotted;*/
+    /*border-color: black;*/
+    /*border-width: medium;*/
 }
