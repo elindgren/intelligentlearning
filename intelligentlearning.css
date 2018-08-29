@@ -301,3 +301,10 @@ ul.breadcrumb li a:hover {
         font-size: 150%;
     }
 }
+.footer{
+    /*Fixates the footer to the bottom of the screen*/
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
