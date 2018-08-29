@@ -303,8 +303,16 @@ ul.breadcrumb li a:hover {
 }
 .footer{
     /*Fixates the footer to the bottom of the screen*/
-    position: fixed;
-    left: 0;
+    position: absolute;
+    right: 0;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    padding: 1rem;
+    height: 3%;
+}
+.main-content{
+    /*This is the styling for the <main> tag of the page. It sets to background color to look like paper
+    and adds padding to properly space the footer.*/
+    background-color: #FAFAFA;
+    padding-bottom: 3%;
 }
