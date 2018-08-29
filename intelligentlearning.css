@@ -309,7 +309,7 @@ ul.breadcrumb li a:hover {
     bottom: 0;
     left: 0;
     padding: 1rem;
-    height: 3%;
+    /*height: 3%;*/
 }
 .main-content{
     /*This is the styling for the <main> tag of the page. It sets to background color to look like paper
