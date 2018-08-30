@@ -107,13 +107,13 @@ ul.breadcrumb li a:hover {
 .answer-container{
     /* The container for the answer form card */
     padding-left: 1%;
-    padding-right: 1%;
+    padding-right: -1%;
     /*padding-bottom: 0px;*/
-    margin:auto;
+    /*margin:auto;*/
     margin-left: 7.5%;
     margin-right: 70%;
     /*margin-right: ;*/
-    /*display: inline-block;*/
+
     /*margin-bottom: 1%;*/
     /*width: 100%;*/
     /*!*Add a shadow to the card*!*/
@@ -126,6 +126,13 @@ ul.breadcrumb li a:hover {
     /*border-style: dotted;*/
     /*border-color: black;*/
 
+}
+@media only screen and (max-width: 768px) {
+    .answer-container{
+        padding-left: 3%;
+        margin-right: 7.5%;
+        display: inline-block; 
+    }
 }
 .answer-form-container{
     /*The styling for the answer form */
