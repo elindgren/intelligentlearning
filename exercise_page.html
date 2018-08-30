@@ -54,9 +54,9 @@
                 <div class="text-container">
                     Enter your answer
                 </div>
-                <div class="answer-container">
+                <div class="answer-container" id="answerContainer">
                     <!--Create an answer form using a numeric textfield -->
-                    <div class="mdl-textfield mdl-js-textfield answer-form-container">
+                    <div class="mdl-textfield mdl-js-textfield answer-form-container" >
                         <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
                                id="exerciseAnswer" onkeydown="enterPressed(event)">
                         <label class="mdl-textfield__label" for="exerciseAnswer" id="exerciseAnswerLabel"></label>
@@ -64,8 +64,8 @@
                     </div>
                     <!--Create a container that will tell whether the result was right or wrong-->
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised submit-button" onclick="checkResult()">Submit</button>
-                    <span class="text-container" id="answerStatus"></span>
-                    <i id="answerIcon" class=""></i>
+                    <!--<span class="text-container" id="answerStatus"></span>-->
+                    <i id="answerIcon"></i>
                 </div>
             </div>
         </div>
@@ -98,35 +98,36 @@
 
     function checkResult() {
         let userInput = Number(document.getElementById("exerciseAnswer").value);
-        let answerStatus = document.getElementById("answerStatus");
+        // let answerStatus = document.getElementById("answerStatus");
         let answerIcon = document.getElementById("answerIcon");
         let answerInput = document.getElementById("exerciseAnswer");
+        let answerContainer = document.getElementById("answerContainer");
         exerciseJSON.tries++;
         exerciseJSON.last_answer = userInput;
         console.log("Try number " + exerciseJSON.tries + ":");
-        if (userInput === Number(exerciseJSON.exercise_answer)) {
+        let answerInterval = 0.1; //The delta in which the answer can lie to be considered correct.
+        if ((userInput >= Number(exerciseJSON.exercise_answer)-answerInterval) && userInput <= Number(exerciseJSON.exercise_answer)+answerInterval) {
             console.log("Answer is right!");
             exerciseJSON.status = "completed";
             // answerStatus.innerText = "Correct";
-            answerStatus.style.color = "#39b728";
+            // answerStatus.style.color = "#39b728";
             answerIcon.innerText="check";
             answerIcon.className = "material-icons icon-align md-answer-icon correct-animation";
             answerIcon.style.color = "rgb(57,183,40)";
             answerInput.style.borderColor = "rgb(57,183,40)";
-            answerInput.style.backgroundColor = "rgba(57, 183, 40, 0.1)";
+            answerContainer.style.borderColor = "rgba(57, 183, 40, 0.4)";  //The indication of correct result should be stronger than a wrong one.
 
         } else {
             console.log("Answer is wrong!");
             exerciseJSON.status = "started";
             // answerStatus.innerText = "Incorrect";
-            answerStatus.style.color = "rgb(213,0,0)";
+            // answerStatus.style.color = "rgb(213,0,0)";
             //Remove this icon and just have the red border?
-            // answerIcon.innerText="error_outline";
-            //These two lines ensure that the "correct" check mark animation plays upon each correct answer.
+            answerIcon.innerText="clear";
             answerIcon.className = "material-icons icon-align md-answer-icon";
-            answerIcon.style.color = "rgba(213,0,0,0)";  // Hide the check mark
+            answerIcon.style.color = "rgba(213,0,0,0.7)";
             answerInput.style.borderColor = "rgb(213,0,0)";
-            answerInput.style.backgroundColor = "rgba(213,0,0,0)";  // Transparent background if wrong answer.
+            answerContainer.style.borderColor = "rgba(213,0,0,0.2)";
         }
         saveExerciseInformation(exerciseJSON);
     }
