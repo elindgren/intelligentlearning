@@ -111,9 +111,9 @@ ul.breadcrumb li a:hover {
     /*padding-bottom: 0px;*/
     /*margin:auto;*/
     margin-left: 7.5%;
-    margin-right: 70%;
+    /*margin-right: 70%;*/
+    display: inline-block;
     /*margin-right: ;*/
-
     /*margin-bottom: 1%;*/
     /*width: 100%;*/
     /*!*Add a shadow to the card*!*/
@@ -131,7 +131,7 @@ ul.breadcrumb li a:hover {
     .answer-container{
         padding-left: 3%;
         margin-right: 7.5%;
-        display: inline-block; 
+        display: inline-block;
     }
 }
 .answer-form-container{
@@ -150,14 +150,14 @@ ul.breadcrumb li a:hover {
 .submit-button{
     margin: 2%;
 }
-@keyframes answer-icon-fade-in {
+@keyframes answer-icon-fade-in-correct {
     from {
         opacity: 0;
-        font-size: 0;
+        /*font-size: 0;*/
     }
     to   {
         opacity: 1;
-        font-size: 300%;
+        /*font-size: 300%;*/
     }
 }
 
@@ -193,7 +193,14 @@ ul.breadcrumb li a:hover {
 }
 .material-icons.md-answer-icon.correct-animation{
     /*Fades in the green check mark*/
-    /*Add this to the class above? Thinking about removing the "incorrect" icon.*/
+    color: rgba(57,183,40,1);
+    animation-name: answer-icon-fade-in;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+.material-icons.md-answer-icon.incorrect-animation{
+    /*Fades in the red cross mark*/
+    color: rgba(213,0,0,0.7);
     animation-name: answer-icon-fade-in;
     animation-duration: 0.5s;
     animation-fill-mode: both;
@@ -313,7 +320,7 @@ ul.breadcrumb li a:hover {
         font-size: 150%;
     }
 }
-.footer{
+.footer {
     /*Fixates the footer to the bottom of the screen*/
     position: absolute;
     right: 0;
@@ -324,13 +331,14 @@ ul.breadcrumb li a:hover {
 @media only screen and (max-width: 768px) {
     .footer{
         /*Positions the footer at the bottom on mobile.*/
-        position: relative;
+        /*position: relative;*/
+
     }
 }
 .main-content{
     /*This is the styling for the <main> tag of the page. It adds padding to properly space the footer */
     padding-bottom: 6rem;
-    /*border-style: dotted;*/
+    /*border-style: dotted; */
     /*border-color: black;*/
     /*border-width: medium;*/
 }

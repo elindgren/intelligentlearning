@@ -91,7 +91,7 @@
      */
     function enterPressed(event) {
         if (event.key === "Enter") {
-            console.log("Enter pressed");
+            // console.log("Enter pressed");
             checkResult();
         }
     }
@@ -105,7 +105,7 @@
         exerciseJSON.tries++;
         exerciseJSON.last_answer = userInput;
         console.log("Try number " + exerciseJSON.tries + ":");
-        let answerInterval = 0.1; //The delta in which the answer can lie to be considered correct.
+        let answerInterval = Number(exerciseJSON.exercise_answer)*0.01; //The delta in which the answer can lie to be considered correct.
         if ((userInput >= Number(exerciseJSON.exercise_answer)-answerInterval) && userInput <= Number(exerciseJSON.exercise_answer)+answerInterval) {
             console.log("Answer is right!");
             exerciseJSON.status = "completed";
@@ -113,7 +113,7 @@
             // answerStatus.style.color = "#39b728";
             answerIcon.innerText="check";
             answerIcon.className = "material-icons icon-align md-answer-icon correct-animation";
-            answerIcon.style.color = "rgb(57,183,40)";
+            answerIcon.style.color = "rgba(57,183,40,1)";
             answerInput.style.borderColor = "rgb(57,183,40)";
             answerContainer.style.borderColor = "rgba(57, 183, 40, 0.4)";  //The indication of correct result should be stronger than a wrong one.
 
