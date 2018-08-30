@@ -331,7 +331,7 @@ ul.breadcrumb li a:hover {
 @media only screen and (max-width: 768px) {
     .footer{
         /*Positions the footer at the bottom on mobile.*/
-        /*position: relative;*/
+        position: relative;
 
     }
 }
